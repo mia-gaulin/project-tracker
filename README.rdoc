@@ -1,0 +1,6 @@
+This app is to help me keep track of things I want to build. There are apps out
+there to do it, but I wanted to make one myself. It should help solidify concepts,
+and it'll just be cool when I use it.
+
+I want to get more practice with Rails, ActiveRecord, and SCSS. I'll also be using
+TDD, because that's always a great idea.

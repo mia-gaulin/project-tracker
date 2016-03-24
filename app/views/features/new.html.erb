@@ -1,0 +1,7 @@
+Add a feature for <%= @project.title %>
+
+<%= form_for [@project, @feature] do |f| %>
+  <%= f.label :body, "Description" %>:
+  <%= f.text_field :body %>
+  <%= f.submit "Add feature" %>
+<% end %>

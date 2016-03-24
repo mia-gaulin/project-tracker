@@ -1,0 +1,9 @@
+<h1>Get to work!</h1>
+
+<div class="callout">
+<% @projects.each do |project| %>
+<li><%= link_to project.title, project %>, added <%= project.created_at %></li>
+<% end %>
+</div>
+
+<%= link_to 'Add a new project', new_project_path %>

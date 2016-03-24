@@ -1,0 +1,27 @@
+<h1><%= @project.title %></h1>
+
+<ul class="menu">
+  <li><%= link_to 'Go home', projects_path %></li>
+  <li><a href="https://www.reddit.com/r/kittens/">Distract me!</a></li>
+</ul>
+
+<div class="text-center">
+    <%= @project.description %>
+</div>
+
+<div class="small-6 columns">
+  <div class="callout">
+    <h4>Features</h4>
+
+    <% @features.each do |feature| %>
+    <li><%= feature.body %></li>
+    <% end %><br />
+    <%= link_to 'Add feature', new_project_feature_path(@project) %>
+  </div>
+</div>
+
+<div class="small-6 columns">
+  <div class="callout">
+    <h4>Play-By-Play</h4>
+  </div>
+</div>
