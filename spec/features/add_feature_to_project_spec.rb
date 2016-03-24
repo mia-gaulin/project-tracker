@@ -23,6 +23,7 @@ feature "add a feature to a project" do
   scenario "user adds a feature" do
     project = FactoryGirl.create(:project)
     feature = Feature.create(body: "This is a feature idea.", project: project)
+    update = Update.create(body: "This is activity.", project: project)
 
     visit projects_path
     click_link project.title
@@ -37,6 +38,7 @@ feature "add a feature to a project" do
   scenario "user submits blank input" do
     project = FactoryGirl.create(:project)
     feature = Feature.create(body: "This is a feature idea.", project: project)
+    update = Update.create(body: "This is activity.", project: project)
 
     visit projects_path
     click_link project.title

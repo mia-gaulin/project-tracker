@@ -7,6 +7,8 @@ class ProjectsController < ApplicationController
     @project = Project.find(params[:id])
     @features = @project.features.order(updated_at: :desc)
     @feature = Feature.new
+    @updates = @project.updates.order(updated_at: :desc)
+    @update = Update.new
   end
 
   def new
@@ -25,12 +27,27 @@ class ProjectsController < ApplicationController
     end
   end
 
+  def destroy
+    @project = Project.find(params[:id])
+    @features = @project.features
+    @updates = @project.updates
+
+    if @project.destroy!
+      @features.map { |feature| feature.destroy! }
+      @updates.map { |update| update.destroy! }
+
+      flash[:notice] = "Project deleted!"
+    end
+    redirect_to projects_path
+  end
+
   private
 
   def project_params
     params.require(:project).permit(
       :title,
-      :description
+      :description,
+      :github_link
     )
   end
 end

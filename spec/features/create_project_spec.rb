@@ -26,6 +26,7 @@ feature "user may create a project" do
 
     fill_in "Title", with: "Fix the zipper on these boots"
     fill_in "Description", with: "No seriously this is bad they're going to break."
+    fill_in "GitHub", with: "http://boots.com"
     click_button "Submit project"
 
     expect(page).to have_content "Fix the zipper on these boots"

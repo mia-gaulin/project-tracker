@@ -1,13 +1,15 @@
 <h1><%= @project.title %></h1>
 
 <ul class="menu">
+  <li><a href="<%= @project.github_link %>">Github link</a></li>
   <li><%= link_to 'Go home', projects_path %></li>
   <li><a href="https://www.reddit.com/r/kittens/">Distract me!</a></li>
+  <li><%= button_to "Delete project", project_path(@project), method: :delete %></li>
 </ul>
 
 <div class="text-center">
     <%= @project.description %>
-</div>
+</div><br />
 
 <div class="small-6 columns">
   <div class="callout">
@@ -22,6 +24,11 @@
 
 <div class="small-6 columns">
   <div class="callout">
-    <h4>Play-By-Play</h4>
+    <h4>Recent Activity</h4>
+
+    <% @updates.each do |update| %>
+    <li><%= update.body %> | <%= update.created_at.strftime("%B %d %Y") %></li>
+    <% end %><br />
+    <%= link_to 'Add activity', new_project_update_path(@project) %>
   </div>
 </div>
