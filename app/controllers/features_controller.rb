@@ -16,7 +16,7 @@ class FeaturesController < ApplicationController
       redirect_to project_path(@project)
     else
       flash[:alert] = "Feature was not saved. #{@feature.errors.full_messages.join ", "}."
-      render :'projects/show'
+      render :'features/new'
     end
   end
 

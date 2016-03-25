@@ -16,7 +16,7 @@ class UpdatesController < ApplicationController
       redirect_to project_path(@project)
     else
       flash[:alert] = "Activity was not saved. #{@update.errors.full_messages.join ", "}."
-      render :'projects/show'
+      render :'updates/new'
     end
   end
 

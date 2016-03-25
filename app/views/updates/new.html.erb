@@ -1,11 +1,13 @@
 <h2>Add activity for <%= @project.title %></h2>
 
 <%= form_for [@project, @update] do |f| %>
-<div class="field">
-  <%= f.label :body, "Activity" %>
-  <%= f.text_field :body %>
-</div>
-<div class="field">
-  <%= f.submit "Add activity" %>
-</div>
+  <div class="field">
+    <%= f.label :body, "Activity" %>
+    <%= f.text_field :body %>
+  </div>
+  <div class="field">
+    <%= f.submit "Add activity" %>
+  </div>
 <% end %>
+
+<%= link_to 'Go home', projects_path %>

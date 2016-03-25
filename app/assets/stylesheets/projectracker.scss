@@ -1,5 +1,40 @@
+$main-color: #F1F0FF;
+$font-sans: "Papyrus", "Times New Roman", Helvetica, Arial, serif;
+$text-color: #443266;
+
+body {
+  background-color: $main-color;
+  text-color: $text-color;
+  font-family: $font-sans;
+}
+
+h1 {
+  color: $text-color;
+  font-family: $font-sans;
+  margin: 30px;
+}
+
+h4 {
+  color: $text-color;
+  font-family: $font-sans;
+}
+
+p {
+  color: $text-color;
+}
+
+a {
+    color: #8C489F;
+}
+
 .flash {
   padding: 1em;
   background-color: #3B9089;
+  text-color: #FFFFFF;
+}
+
+.flash.alert {
+  padding: 1em;
+  background-color: #FF0000;
   text-color: #FFFFFF;
 }
